@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { AboutType } from '@/types/types';
 
-const Hero = () => {
+type Props = {
+  about: AboutType[];
+};
+const Hero = ({ about }: Props): JSX.Element => {
   return (
-    <section className="body-font bg-gray-900 text-gray-400">
+    <section className="body-font bg-gray-900 text-gray-400" id="home">
       <div className="container mx-auto flex flex-col items-center px-5 py-24 md:flex-row">
         <div className="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
           <img
@@ -34,7 +38,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

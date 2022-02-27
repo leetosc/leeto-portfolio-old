@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { AboutType } from '@/types/types';
 
-const About = () => {
+type Props = {
+  about: AboutType[];
+};
+const About = ({ about }: Props): JSX.Element => {
   return (
-    <section className="bg-white dark:bg-slate-900">
+    <section className="bg-white dark:bg-slate-900" id="about">
       <div className="container mx-auto px-6 py-8">
         <div className="items-center lg:flex">
           <div className="lg:w-1/2">
@@ -75,7 +79,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

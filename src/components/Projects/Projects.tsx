@@ -1,13 +1,13 @@
 import React from 'react';
-import { Project } from '@/types/types';
+import { ProjectType } from '@/types/types';
 
 type Props = {
-  projects: Project[];
+  projects: ProjectType[];
 };
 
 const Projects = ({ projects }: Props): JSX.Element => {
   return (
-    <section className="body-font bg-gray-900 text-gray-400">
+    <section className="body-font bg-gray-900 text-gray-400" id="projects">
       <div className="container mx-auto px-5 py-24">
         <h2 className="mb-6 text-3xl font-bold text-gray-800 dark:text-gray-100">
           Featured Projects

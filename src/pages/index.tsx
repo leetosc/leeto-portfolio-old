@@ -8,16 +8,15 @@ import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 
-import { Project } from '@/types/types';
+import { AboutType, ProjectType } from '@/types/types';
 
 interface Props {
-  about: any[];
-  projects: Project[];
+  about: AboutType;
+  projects: ProjectType[];
 }
 
-const Home: NextPage<Props> = (props) => {
-  console.log(props);
-  const { about, projects } = props;
+const Home: NextPage<Props> = ({ about, projects }) => {
+  console.log({ about, projects });
   return (
     <div className="">
       <Head>
@@ -25,8 +24,8 @@ const Home: NextPage<Props> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Hero />
-      <About />
+      <Hero about={about} />
+      <About about={about} />
       <Projects projects={projects} />
       <Footer />
     </div>

@@ -1,17 +1,18 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import Link from 'next/link'
+import { Fragment } from 'react';
+import { Disclosure, Transition } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 
 const navigation = [
-  { name: 'Home', href: '#', current: false },
-  { name: 'About', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-]
+  { name: 'Home', href: '#', current: false, to: 'home' },
+  { name: 'About', href: '#', current: false, to: 'about' },
+  { name: 'Projects', href: '#', current: false, to: 'projects' },
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Header() {
@@ -36,19 +37,23 @@ export default function Header() {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
+                    <ScrollLink
                       key={item.name}
-                      href={item.href}
+                      activeClass="font-bold"
                       className={classNames(
                         item.current
                           ? 'bg-gray-900 text-white'
                           : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'rounded-md px-3 py-2 text-sm font-medium'
+                        'cursor-pointer rounded-md px-3 py-2 text-sm font-medium'
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      to={item.to}
+                      offset={-50}
+                      spy={true}
+                      smooth={true}
+                      duration={1000}
                     >
                       {item.name}
-                    </a>
+                    </ScrollLink>
                   ))}
                 </div>
               </div>
@@ -69,36 +74,42 @@ export default function Header() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map((item) => (
-                <Transition
-                  enter="transition-opacity duration-300"
-                  enterFrom="opacity-0"
-                  enterTo="opacity-100"
-                  leave="transition-opacity duration-300"
-                  leaveFrom="opacity-100"
-                  leaveTo="opacity-0"
-                  key={item.name}
-                >
-                  <Disclosure.Button
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block rounded-md px-3 py-2 text-base font-medium'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
+            <Transition
+              enter="transition-opacity duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity duration-300"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="space-y-1 px-2 pt-2 pb-3">
+                {navigation.map((item) => (
+                  <ScrollLink
+                    key={item.name}
+                    to={item.to}
+                    offset={-50}
+                    spy={true}
+                    smooth={true}
+                    duration={1000}
                   >
-                    {item.name}
-                  </Disclosure.Button>
-                </Transition>
-              ))}
-            </div>
+                    <Disclosure.Button
+                      className={classNames(
+                        item.current
+                          ? 'bg-gray-900 text-white'
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'block rounded-md px-3 py-2 text-base font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </Disclosure.Button>
+                  </ScrollLink>
+                ))}
+              </div>
+            </Transition>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  )
+  );
 }
