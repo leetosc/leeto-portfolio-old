@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -20,15 +20,7 @@ const Footer = () => {
           <span className="ml-3 text-xl">Tailblocks</span>
         </a>
         <p className="mt-4 text-sm text-gray-400 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:pl-4">
-          © 2020 Tailblocks —
-          <a
-            href="https://twitter.com/knyttneve"
-            className="ml-1 text-gray-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @knyttneve
-          </a>
+          © {new Date().getFullYear()} Leeto
         </p>
         <span className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
           <a className="text-gray-400">
@@ -89,7 +81,7 @@ const Footer = () => {
         </span>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

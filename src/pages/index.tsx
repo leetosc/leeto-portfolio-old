@@ -1,7 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import axios, { AxiosError } from 'axios';
 import Head from 'next/head';
-import Image from 'next/image';
 import About from '../components/About/About';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
