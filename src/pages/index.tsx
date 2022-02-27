@@ -9,6 +9,7 @@ import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 
 import { AboutType, ProjectType } from '@/types/types';
+import { API_URL } from '@/utils/constants';
 
 interface Props {
   about: AboutType;
@@ -34,12 +35,8 @@ const Home: NextPage<Props> = ({ about, projects }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const aboutRes = await axios.get(
-      'https://portfolioapi.leeto.dev/items/About'
-    );
-    const projectRes = await axios.get(
-      'https://portfolioapi.leeto.dev/items/projects'
-    );
+    const aboutRes = await axios.get(`${API_URL}/items/About`);
+    const projectRes = await axios.get(`${API_URL}/items/projects`);
 
     return {
       props: {

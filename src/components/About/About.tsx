@@ -2,7 +2,7 @@ import React from 'react';
 import { AboutType } from '@/types/types';
 
 type Props = {
-  about: AboutType[];
+  about: AboutType;
 };
 const About = ({ about }: Props): JSX.Element => {
   return (
