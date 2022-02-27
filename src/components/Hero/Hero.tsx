@@ -17,16 +17,9 @@ const Hero = ({ about }: Props): JSX.Element => {
         </div>
         <div className="flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24">
           <h1 className="title-font mb-4 text-3xl font-medium text-white sm:text-4xl">
-            Before they sold out
-            <br className="hidden lg:inline-block" />
-            readymade gluten
+            {about.name}
           </h1>
-          <p className="mb-8 leading-relaxed">
-            Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
-            plant cold-pressed tacos poke beard tote bag. Heirloom echo park
-            mlkshk tote bag selvage hot chicken authentic tumeric truffaut
-            hexagon try-hard chambray.
-          </p>
+          <p className="mb-8 leading-relaxed">{about.title}</p>
           <div className="flex justify-center">
             <button className="inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg text-white hover:bg-indigo-600 focus:outline-none">
               Button

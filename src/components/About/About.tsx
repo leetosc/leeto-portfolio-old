@@ -1,5 +1,6 @@
 import React from 'react';
 import { AboutType } from '@/types/types';
+import { parseHtml } from '@/utils/parseHtml';
 
 type Props = {
   about: AboutType;
@@ -14,17 +15,7 @@ const About = ({ about }: Props): JSX.Element => {
               Who I am
             </h2>
             <p className="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
-              Hi I am jane , software engineer{' '}
-              <a
-                className="font-bold text-blue-600 dark:text-blue-400"
-                href="#"
-              >
-                @BakaTeam
-              </a>{' '}
-              , Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
-              in sed non alias, fugiat, commodi nemo ut fugit corrupti dolorem
-              sequi ex veniam consequuntur id, maiores beatae ipsa omnis
-              aliquam?
+              {parseHtml(about.bio).content}
             </p>
             <div className="-mx-2 mt-6 flex items-center">
               <a className="mx-2" href="#" aria-label="Twitter">
