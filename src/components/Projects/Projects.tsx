@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectType } from '@/types/types';
+import { API_URL } from '@/utils/constants';
 
 type Props = {
   projects: ProjectType[];
@@ -18,8 +19,12 @@ const Projects = ({ projects }: Props): JSX.Element => {
               <div className="h-full overflow-hidden rounded-lg border-2 border-gray-800">
                 <img
                   className="w-full object-cover object-center md:h-36 lg:h-48"
-                  src="https://dummyimage.com/720x400"
-                  alt="blog"
+                  src={
+                    project.image
+                      ? `${API_URL}/assets/${project.image}`
+                      : '/laptop.jpg'
+                  }
+                  alt={project.name}
                 />
                 <div className="p-6">
                   <h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-500">

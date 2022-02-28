@@ -11,7 +11,7 @@ const About = ({ about }: Props): JSX.Element => {
         <div className="items-center lg:flex">
           <div className="lg:w-1/2">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
-              Who I am
+              About Me
             </h2>
             <div
               className="prose prose-slate dark:prose-invert"

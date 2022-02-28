@@ -25,9 +25,9 @@ export default function Header() {
               <div className="flex flex-1 items-center  sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="mr-3 block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
+                    className="mr-3 block h-10 w-auto"
+                    src="/website.png"
+                    alt="icon"
                   />
                   <Link href="/">
                     <a className="text-2xl font-bold text-white">Leeto</a>
