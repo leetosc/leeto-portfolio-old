@@ -1,6 +1,8 @@
 import React from 'react';
 import { ProjectType } from '@/types/types';
 import { API_URL } from '@/utils/constants';
+import Link from 'next/link';
+import parameterize from 'parameterize';
 
 type Props = {
   projects: ProjectType[];
@@ -37,21 +39,23 @@ const Projects = ({ projects }: Props): JSX.Element => {
                     {project.description_short}
                   </p>
                   <div className="flex flex-wrap items-center ">
-                    <a className="inline-flex items-center text-indigo-400 md:mb-2 lg:mb-0">
-                      Learn More
-                      <svg
-                        className="ml-2 h-4 w-4"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M5 12h14" />
-                        <path d="M12 5l7 7-7 7" />
-                      </svg>
-                    </a>
+                    <Link href={`/projects/${parameterize(project.name)}`}>
+                      <a className="inline-flex items-center text-indigo-400 md:mb-2 lg:mb-0">
+                        Learn More
+                        <svg
+                          className="ml-2 h-4 w-4"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="M12 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </Link>
                     <span className="mr-3 ml-auto inline-flex items-center border-r-2 border-gray-800 py-1 pr-3 text-sm leading-none text-gray-500 md:ml-0 lg:ml-auto">
                       <svg
                         className="mr-1 h-4 w-4"
