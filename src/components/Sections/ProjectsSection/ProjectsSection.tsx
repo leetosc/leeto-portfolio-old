@@ -41,7 +41,7 @@ const Projects = ({ projects }: Props): JSX.Element => {
                   <div className="flex flex-wrap items-center ">
                     <Link href={`/projects/${parameterize(project.name)}`}>
                       <a className="inline-flex items-center text-indigo-400 md:mb-2 lg:mb-0">
-                        Learn More
+                        View Details
                         <svg
                           className="ml-2 h-4 w-4"
                           viewBox="0 0 24 24"

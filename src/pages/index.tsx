@@ -1,10 +1,10 @@
 import type { NextPage, GetStaticProps } from 'next';
 import axios, { AxiosError } from 'axios';
 import Head from 'next/head';
-import About from '../components/About/About';
+import About from '../components/Sections/AboutSection/AboutSection';
 import Footer from '../components/Footer/Footer';
-import Hero from '../components/Hero/Hero';
-import Projects from '../components/Projects/Projects';
+import Hero from '../components/Sections/HeroSection/HeroSection';
+import Projects from '../components/Sections/ProjectsSection/ProjectsSection';
 
 import { AboutType, ProjectType } from '@/types/types';
 import { API_URL } from '@/utils/constants';

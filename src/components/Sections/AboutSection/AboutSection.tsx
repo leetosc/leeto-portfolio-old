@@ -9,8 +9,8 @@ const About = ({ about }: Props): JSX.Element => {
     <section className="bg-white dark:bg-slate-900" id="about">
       <div className="container mx-auto px-6 py-8">
         <div className="items-center lg:flex">
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
+          <div className="">
+            <h2 className="mb-5 text-3xl font-bold text-gray-800 dark:text-gray-100">
               About Me
             </h2>
             <div
