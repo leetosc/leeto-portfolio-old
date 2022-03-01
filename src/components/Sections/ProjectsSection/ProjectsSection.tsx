@@ -91,6 +91,25 @@ const Projects = ({ projects }: Props): JSX.Element => {
             </div>
           ))}
         </div>
+        <div className="mt-8">
+          <Link href={`/projects`}>
+            <a className="inline-flex items-center text-indigo-300 md:mb-2 lg:mb-0">
+              See All Projects
+              <svg
+                className="ml-2 h-4 w-4"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </Link>
+        </div>
       </div>
     </section>
   );

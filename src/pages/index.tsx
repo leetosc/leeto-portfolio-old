@@ -25,7 +25,6 @@ const Home: NextPage<Props> = ({ about, projects }) => {
       <Hero about={about} />
       <About about={about} />
       <Projects projects={projects} />
-      <Footer />
     </div>
   );
 };
