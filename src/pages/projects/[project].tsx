@@ -13,7 +13,7 @@ interface Props {
 const Project: NextPage<Props> = ({ projectData }) => {
   console.log({ projectData });
   return (
-    <div className="">
+    <div className="min-h-full flex-1 bg-gray-900">
       <Head>
         <title>{`${projectData.name} | Leeto`}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -29,12 +29,12 @@ const Project: NextPage<Props> = ({ projectData }) => {
               {projectData.description_short}
             </p>
             <div className="flex justify-center">
-              <button className="inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg text-white hover:bg-indigo-600 focus:outline-none">
+              {/* <button className="inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg text-white hover:bg-indigo-600 focus:outline-none">
                 Button
               </button>
               <button className="ml-4 inline-flex rounded border-0 bg-gray-800 py-2 px-6 text-lg text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none">
                 Button
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="w-5/6 md:w-1/2 lg:w-full lg:max-w-lg">
@@ -64,7 +64,7 @@ const Project: NextPage<Props> = ({ projectData }) => {
               <h2 className="title-font text-sm font-medium tracking-wider text-white">
                 {projectData.url}
               </h2>
-              <p className="text-gray-500">Senior Product Designer</p>
+              {/* <p className="text-gray-500">Senior Product Designer</p> */}
             </div>
           </div>
         </section>

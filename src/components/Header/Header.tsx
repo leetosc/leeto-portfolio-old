@@ -5,10 +5,15 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 
+// const navigation = [
+//   { name: 'Home', href: '#', current: false, to: 'home' },
+//   { name: 'About', href: '#', current: false, to: 'about' },
+//   { name: 'Projects', href: '#', current: false, to: 'projects' },
+// ];
+
 const navigation = [
-  { name: 'Home', href: '#', current: false, to: 'home' },
-  { name: 'About', href: '#', current: false, to: 'about' },
-  { name: 'Projects', href: '#', current: false, to: 'projects' },
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects' },
 ];
 
 function classNames(...classes: string[]) {
@@ -24,11 +29,15 @@ export default function Header() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-1 items-center  sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="mr-3 block h-10 w-auto"
-                    src="/website.png"
-                    alt="icon"
-                  />
+                  <Link href="/">
+                    <a>
+                      <img
+                        className="mr-3 block h-10 w-auto"
+                        src="/website.png"
+                        alt="icon"
+                      />
+                    </a>
+                  </Link>
                   <Link href="/">
                     <a className="text-2xl font-bold text-white">Leeto</a>
                   </Link>
@@ -37,23 +46,33 @@ export default function Header() {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <ScrollLink
-                      key={item.name}
-                      activeClass="font-bold"
-                      className={classNames(
-                        item.current
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'cursor-pointer rounded-md px-3 py-2 text-sm font-medium'
-                      )}
-                      to={item.to}
-                      offset={-50}
-                      spy={true}
-                      smooth={true}
-                      duration={1000}
-                    >
-                      {item.name}
-                    </ScrollLink>
+                    // <ScrollLink
+                    //   key={item.name}
+                    //   activeClass="font-bold"
+                    //   className={classNames(
+                    //     item.current
+                    //       ? 'bg-gray-900 text-white'
+                    //       : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    //     'cursor-pointer rounded-md px-3 py-2 text-sm font-medium'
+                    //   )}
+                    //   to={item.to}
+                    //   offset={-50}
+                    //   spy={true}
+                    //   smooth={true}
+                    //   duration={1000}
+                    // >
+                    //   {item.name}
+                    // </ScrollLink>
+                    <Link key={item.name} href={item.href}>
+                      <a
+                        className={classNames(
+                          'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'cursor-pointer rounded-md px-3 py-2 text-sm font-medium'
+                        )}
+                      >
+                        {item.name}
+                      </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -84,26 +103,37 @@ export default function Header() {
             >
               <div className="space-y-1 px-2 pt-2 pb-3">
                 {navigation.map((item) => (
-                  <ScrollLink
+                  // <ScrollLink
+                  //   key={item.name}
+                  //   to={item.to}
+                  //   offset={-50}
+                  //   spy={true}
+                  //   smooth={true}
+                  //   duration={1000}
+                  // >
+                  //   <Disclosure.Button
+                  //     className={classNames(
+                  //       item.current
+                  //         ? 'bg-gray-900 text-white'
+                  //         : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                  //       'block rounded-md px-3 py-2 text-base font-medium'
+                  //     )}
+                  //     aria-current={item.current ? 'page' : undefined}
+                  //   >
+                  //     {item.name}
+                  //   </Disclosure.Button>
+                  // </ScrollLink>
+
+                  <Disclosure.Button
                     key={item.name}
-                    to={item.to}
-                    offset={-50}
-                    spy={true}
-                    smooth={true}
-                    duration={1000}
+                    className={classNames(
+                      'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      'block rounded-md px-3 py-2 text-base font-medium'
+                    )}
+                    aria-current={undefined}
                   >
-                    <Disclosure.Button
-                      className={classNames(
-                        item.current
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'block rounded-md px-3 py-2 text-base font-medium'
-                      )}
-                      aria-current={item.current ? 'page' : undefined}
-                    >
-                      {item.name}
-                    </Disclosure.Button>
-                  </ScrollLink>
+                    <Link href={item.href}>{item.name}</Link>
+                  </Disclosure.Button>
                 ))}
               </div>
             </Transition>

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="body-font bg-gray-900 text-gray-400">
       <div className="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
-        <a className="title-font flex items-center justify-center font-medium text-white md:justify-start">
+        {/* <a className="title-font flex items-center justify-center font-medium text-white md:justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -17,9 +17,9 @@ const Footer = () => {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
-        </a>
-        <p className="mt-4 text-sm text-gray-400 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:pl-4">
+          <span className="ml-3 text-xl">Leeto</span>
+        </a> */}
+        <p className="mt-4 text-sm text-gray-400 sm:ml-4 sm:mt-0  sm:py-2 sm:pl-4">
           © {new Date().getFullYear()} Leeto
         </p>
         <span className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">

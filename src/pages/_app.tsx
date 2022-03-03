@@ -5,11 +5,11 @@ import Footer from '@/components/Footer/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div className="flex min-h-screen flex-col justify-between">
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   );
 }
 
