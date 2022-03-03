@@ -2,7 +2,6 @@ import type { NextPage, GetStaticProps } from 'next';
 import axios, { AxiosError } from 'axios';
 import Head from 'next/head';
 import About from '../components/Sections/AboutSection/AboutSection';
-import Footer from '../components/Footer/Footer';
 import Hero from '../components/Sections/HeroSection/HeroSection';
 import Projects from '../components/Sections/ProjectsSection/ProjectsSection';
 
@@ -32,7 +31,9 @@ const Home: NextPage<Props> = ({ about, projects }) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const aboutRes = await axios.get(`${API_URL}/items/About`);
-    const projectRes = await axios.get(`${API_URL}/items/projects`);
+    const projectRes = await axios.get(
+      `${API_URL}/items/projects?filter[is_featured][_eq]=true`
+    );
 
     return {
       props: {
