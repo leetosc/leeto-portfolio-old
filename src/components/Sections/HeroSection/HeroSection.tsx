@@ -9,7 +9,7 @@ const Hero = ({ about }: Props): JSX.Element => {
   return (
     <section className="body-font bg-gray-900 text-gray-400" id="home">
       <div className="container mx-auto flex flex-col items-center px-5 py-24 md:flex-row">
-        <div className="mb-10 w-5/6 max-w-xs md:mb-0 md:w-1/2 lg:w-full lg:max-w-sm">
+        <div className="mb-10 w-5/6 max-w-xs md:mb-0 md:w-1/2 lg:w-full lg:max-w-xs">
           <img
             className="rounded object-cover object-center"
             alt={about.name}
